@@ -12,7 +12,7 @@ from faker import Faker
 from multiprocessing import Process
 import threading
 stopuser = {}
-token = '7355787794:AAHgSqY1-LUL3wQa8TcZp-nB8hsHcjyKNa8'
+token = '7441959878:AAGEjMqSMB8H0xPJNcKesqQr1b0JkusJ9u4'
 bot=telebot.TeleBot(token,parse_mode="HTML")
 admin=843841687
 f = Faker()
